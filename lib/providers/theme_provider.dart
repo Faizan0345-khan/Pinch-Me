@@ -28,7 +28,7 @@ class ThemeProvider extends ChangeNotifier {
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),

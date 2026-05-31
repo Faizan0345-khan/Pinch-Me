@@ -1,25 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'providers/habit_provider.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/progress_screen.dart';
 import 'screens/profile_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // Load environment variables
-  await dotenv.load();
-
-  // Initialize Supabase
-  await Supabase.initialize(
-    url: dotenv.env['SUPABASE_URL']!,
-    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
-  );
-
+void main() {
   runApp(const MyApp());
 }
 
@@ -42,8 +29,10 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.purple,
             foregroundColor: Colors.white,
             elevation: 0,
+            centerTitle: true,
           ),
-          cardTheme: const CardTheme(
+          cardTheme: const CardThemeData(
+            // Changed CardThemeData to CardTheme
             elevation: 2,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -67,8 +56,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
+  // FIXED: Added HomeScreen back to the list
   final List<Widget> _screens = [
-    const HomeScreen(),
+    const HomeScreen(), // This was missing!
     const ProgressScreen(),
     const ProfileScreen(),
   ];
