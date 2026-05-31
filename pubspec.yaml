@@ -1,0 +1,91 @@
+name: flutter_application_1
+description: "Pinch Me - Daily Habit Tracker & Reminder App"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI & State Management
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.1
+  intl: ^0.19.0
+  
+  # Supabase (Backend)
+  supabase_flutter: ^2.5.0
+  
+  # Environment variables
+  flutter_dotenv: ^5.1.0
+  
+  # Notifications & Alarms
+  flutter_local_notifications: ^17.1.0
+  android_alarm_manager_plus: ^4.0.0
+  workmanager: ^0.5.1
+  
+  # Audio
+  audioplayers: ^6.0.0
+  
+  # Local Storage (for offline support)
+  shared_preferences: ^2.2.3
+  sqflite: ^2.3.3
+  path: ^1.9.0
+  
+  # Permissions
+  permission_handler: ^11.3.1
+  
+  # Calendar & Date Pickers
+  table_calendar: ^3.1.0
+  flutter_time_picker_spinner: ^2.0.0
+  
+  # Charts & Graphs
+  fl_chart: ^0.68.0
+  
+  # Utilities
+  google_fonts: ^6.2.1
+  url_launcher: ^6.3.0
+  share_plus: ^10.0.0
+  image_picker: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Assets
+  assets:
+    - .env
+    - assets/sounds/
+    - assets/images/
+    - assets/animations/
+
+  # Fonts - Commented out if you don't have font files
+  # To use custom fonts, uncomment this section and add your font files to assets/fonts/
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/Poppins-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Poppins-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/Inter-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Inter-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/Inter-Bold.ttf
+  #         weight: 700
